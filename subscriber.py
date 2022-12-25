@@ -16,7 +16,7 @@ def subscriber():
             frame = footage_socket.recv()
             npimg = np.frombuffer(frame, dtype=np.uint8)
             source = cv2.imdecode(npimg, 1)
-            # source = cv2.cvtColor(source , cv2.COLOR_BGR2RGB)
+            source = cv2.cvtColor(source , cv2.COLOR_BGR2RGB)
             cv2.imshow("Stream", source)
             cv2.waitKey(1)
 

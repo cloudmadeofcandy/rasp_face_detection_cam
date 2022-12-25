@@ -32,7 +32,7 @@ for root, dirs, files in os.walk(imgdir):
             id_ = label_ids[label]
             pil_image = Image.open(path).convert("L")
             image_array = np.array(pil_image, np.uint8)
-            faces = face_cascade.detectMultiScale(image_array, scaleFactor=1.5, minNeighbors=5)
+            faces = face_cascade.detectMultiScale(image_array, scaleFactor=1.05, minNeighbors=6)
             # if len(faces) == 0:
             #     os.remove(path)
             for (x,y,w,h) in faces:
